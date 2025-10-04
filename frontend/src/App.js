@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ProductCard from './ProductCard';
-
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:5000';
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading]   = useState(true);
@@ -22,7 +22,7 @@ function App() {
     // Ürünleri backend'den al
     const fetchProducts = async () => {
       try {
-        const res = await fetch('http://localhost:5000/products');
+        const res = await fetch(`${API_BASE}/products`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setProducts(data);
