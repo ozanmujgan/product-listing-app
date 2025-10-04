@@ -1,0 +1,98 @@
+/* KART GÖVDE */
+/* ESKİ width değerini (ör. 200px / 260px) kaldırıyoruz */
+.product-card{
+  /* görünür alanı tam 4’e böle: (container - 2*padding - 3*gap) / 4 */
+  flex: 0 0 calc((min(1200px, 100vw) - 128px - 108px) / 4);
+  /* açıklama: 128px = 2*64 padding, 108px = 3*36 gap */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.product-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+
+.product-image-container{
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* kare */
+  border-radius: 16px;
+  background: #f4f4f4;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.product-image{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+
+/* METİNLER */
+.product-name {
+  font-family: 'Avenir', 'Nunito', sans-serif;
+  font-weight: 400;   /* Book */
+  font-size: 14px;
+  color: #222;
+}
+
+
+.product-price {
+  font-family: 'Avenir', 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #222;
+}
+
+.score-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;   /* Medium */
+  font-size: 15px;
+  color: #666;
+}
+
+/* RENK SEÇİCİ */
+.color-picker{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 8px;
+}
+.color-swatch{
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+}
+.color-swatch.selected{ outline: 2px solid #bdbdbd; }
+.color-swatch.yellow { background-color: #E6CA97; }  /* Yellow Gold */
+.color-swatch.white  { background-color: #D9D9D9; }  /* White Gold */
+.color-swatch.rose   { background-color: #E1A4A9; }  /* Rose Gold */
+.metal-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;   /* Regular */
+  font-size: 15px;
+  color: #666;
+}
+
+/* YILDIZLAR – fraksiyonel dolum */
+.popularity-score{ display:flex; align-items:center; gap:8px; margin-top:6px; }
+.stars{
+  position: relative;
+  display: inline-block;
+  font-size: 15px;              /* büyüklüğü buradan ayarla */
+  line-height: 1;
+}
+.stars-bg{ color:#d0d0d0; }
+.stars-fg{
+  position:absolute; left:0; top:0;
+  white-space:nowrap; overflow:hidden;
+  color:#f2b01e;                /* altın */
+}
+
