@@ -7,7 +7,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import products from './products.json' with { type: 'json' };
-import fetch from 'node-fetch';
+//import fetch from 'node-fetch';
 
 
 // -------------------- App & Sabitler --------------------
